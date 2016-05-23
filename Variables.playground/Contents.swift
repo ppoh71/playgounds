@@ -2,25 +2,53 @@
 
 import UIKit
 
-var welcomeMessage = "Hello, Your account is overdrawn. Don't you know how to manage your money dummy!"
+let drawHeight = 200
+UIGraphicsBeginImageContextWithOptions(CGSize(width: 10, height: drawHeight), false, 0)
+let context = UIGraphicsGetCurrentContext()
 
-var accountBalance = -500.0
+//flipp-coords
+CGContextTranslateCTM(context, 0, CGFloat(drawHeight));
+CGContextScaleCTM(context, 1.0, -1.0);
 
-var decimal = 50.5
+//get height and color for line
+//let LineHeight = globalSpeed.gSpeed
+//let LineColor = colorUtils.polylineColors(utils.getSpeedIndex(globalSpeed.gSpeed/3.6))
+let LineHeight = 70
+let LineColor = UIColor.cyanColor()
 
-decimal = 20.23
+//percentage height of line image
+let height2 = LineHeight*35/100
 
-let newDecimal = 40.5
+//make rect with height, position midddle due to mapbox marker image settings
+let rectangle = CGRect(x: 0, y: drawHeight/2, width: 1, height: Int(height2))
 
-var 🙈 = "Horse"
+let altrectangle = CGRect(x: 0, y: 180, width: 3, height: 3)
 
-var account1 = 0.0, account2 = 1.1, account3 = 3.6
+//context stuff
+CGContextSetAlpha(context,0.6);
+CGContextSetLineWidth(context, 1)
+CGContextMoveToPoint(context,0, 0)
 
-var newMessage: String
+CGContextAddRect(context, rectangle)
+CGContextSetStrokeColorWithColor(context, LineColor.CGColor)
+CGContextDrawPath(context, .FillStroke)
 
-newMessage = "Hi, this is a new message!"
+CGContextSetStrokeColorWithColor(context, UIColor.whiteColor().CGColor)
+CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor)
+CGContextAddRect(context, altrectangle)
+CGContextDrawPath(context, .FillStroke)
 
-var red, green, blue: Double
+//CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor)
+
+//CGContextSetLineWidth(context, 1)
+
+//CGContextDrawPath(context, .FillStroke)
 
 
+
+
+
+
+let img = UIGraphicsGetImageFromCurrentImageContext()
+UIGraphicsEndImageContext()
 
