@@ -1,12 +1,8 @@
 //: Playground - noun: a place where people can play
 
 /*
-*
 * calculate the center point of multiple latitude longitude coordinate-pairs
-*
 */
-
-
 
 import CoreLocation
 import GLKit
@@ -19,7 +15,7 @@ LocationPoints.append(CLLocationCoordinate2D(latitude: 37.627512369999998, longi
 LocationPoints.append(CLLocationCoordinate2D(latitude: 37.56502528, longitude: -122.43105867))
 LocationPoints.append(CLLocationCoordinate2D(latitude: 37.56502528, longitude: -122.38780611999999))
 
-
+// center func
 func getCenterCoord(LocationPoints: [CLLocationCoordinate2D]) -> CLLocationCoordinate2D{
     
     var x:Float = 0.0;
@@ -52,6 +48,7 @@ func getCenterCoord(LocationPoints: [CLLocationCoordinate2D]) -> CLLocationCoord
     
 }
 
+//get the centerpoint
 var centerPoint = getCenterCoord(LocationPoints)
 print("Latitude: \(centerPoint.latitude) / Longitude: \(centerPoint.longitude)")
 
