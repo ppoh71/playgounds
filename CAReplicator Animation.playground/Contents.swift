@@ -18,15 +18,15 @@ XCPlaygroundPage.currentPage.liveView = container
 func animation1() {
     
     let r = CAReplicatorLayer()
-    r.bounds = CGRect(x: 0.0, y: 0.0, width: 60.0, height: 60.0)
+    r.bounds = CGRect(x: 0.0, y: 0.0, width: 60.0, height: 200.0)
     r.position = container.center
     r.backgroundColor = UIColor.lightGrayColor().CGColor
     container.layer.addSublayer(r)
     
     
     let bar = CALayer()
-    bar.bounds = CGRect(x: 0.0, y: 0.0, width: 8.0, height: 40.0)
-    bar.position = CGPoint(x: 10.0, y: 75.0)
+    bar.bounds = CGRect(x: 0.0, y: 0.0, width: 8.0, height: 50.0)
+    bar.position = CGPoint(x: 10.0, y: 100.0)
     bar.cornerRadius = 2.0
     bar.backgroundColor = UIColor.redColor().CGColor
     
@@ -38,7 +38,7 @@ func animation1() {
     move.autoreverses = true
     move.repeatCount = Float.infinity
     
-    bar.addAnimation(move, forKey: nil)
+    //bar.addAnimation(move, forKey: nil)
     
     r.instanceCount = 3
     r.instanceDelay = 0.33
