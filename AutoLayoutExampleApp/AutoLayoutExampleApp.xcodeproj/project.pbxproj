@@ -290,6 +290,7 @@
 				55D13E201D192ACF00AD61BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
