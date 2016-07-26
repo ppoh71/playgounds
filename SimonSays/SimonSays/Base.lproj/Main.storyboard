@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="SimonSays" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIK-GY-J9y">
+                                <rect key="frame" x="40" y="325" width="520" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="lvE-OF-5wx"/>
+                                    <constraint firstAttribute="width" constant="520" id="pYe-pm-LZN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ody-4K-4Ym">
+                                <rect key="frame" x="40" y="285" width="520" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Me9-pT-aRO"/>
+                                    <constraint firstAttribute="width" constant="174" id="jVC-Is-9Li"/>
+                                </constraints>
+                                <state key="normal" title="Start Game"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="jVC-Is-9Li"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ep1-FN-UU6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="zIK-GY-J9y" secondAttribute="trailing" constant="20" id="2oZ-rg-pbr"/>
+                            <constraint firstItem="zIK-GY-J9y" firstAttribute="top" secondItem="ody-4K-4Ym" secondAttribute="bottom" constant="10" id="cSC-Ca-jmx"/>
+                            <constraint firstItem="zIK-GY-J9y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="g5h-2D-8ar"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ody-4K-4Ym" secondAttribute="trailing" constant="20" id="kY3-gd-7Av"/>
+                            <constraint firstItem="ody-4K-4Ym" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="r6a-HO-sHk"/>
+                            <constraint firstItem="ody-4K-4Ym" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ufn-MP-Fv4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="highscoreLabel" destination="zIK-GY-J9y" id="xdy-c4-O4L"/>
+                        <outlet property="startButton" destination="ufn-MP-Fv4" id="R1r-bP-1vs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="308" y="429"/>
+        </scene>
+        <!--Buttons View Controller-->
+        <scene sceneID="7nE-8g-UER">
+            <objects>
+                <viewController storyboardIdentifier="ButtonViewController" id="VdE-1M-bbW" customClass="ButtonsViewController" customModule="SimonSays" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L24-yg-QLv"/>
+                        <viewControllerLayoutGuide type="bottom" id="mYw-KF-JQX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eyh-qC-dzg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pt3-fv-PZV" customClass="ColorButton" customModule="SimonSays" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="300" height="290"/>
+                                <connections>
+                                    <action selector="buttonHandler:" destination="VdE-1M-bbW" eventType="touchUpInside" id="Age-bz-qwE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3c-Mb-Zdb" customClass="ColorButton" customModule="SimonSays" customModuleProvider="target">
+                                <rect key="frame" x="300" y="20" width="300" height="290"/>
+                                <connections>
+                                    <action selector="buttonHandler:" destination="VdE-1M-bbW" eventType="touchUpInside" id="OHN-jS-GwZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tiv-i5-qhr" customClass="ColorButton" customModule="SimonSays" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="310" width="300" height="290"/>
+                                <connections>
+                                    <action selector="buttonHandler:" destination="VdE-1M-bbW" eventType="touchUpOutside" id="6NI-C8-wKs"/>
+                                    <action selector="buttonHandler:" destination="VdE-1M-bbW" eventType="touchUpInside" id="x3t-Y5-aJe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVg-xg-uAR" customClass="ColorButton" customModule="SimonSays" customModuleProvider="target">
+                                <rect key="frame" x="300" y="310" width="300" height="290"/>
+                                <connections>
+                                    <action selector="buttonHandler:" destination="VdE-1M-bbW" eventType="touchUpInside" id="k4M-Ah-QEp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="UVg-xg-uAR" secondAttribute="trailing" id="1or-FJ-P1l"/>
+                            <constraint firstItem="tiv-i5-qhr" firstAttribute="height" secondItem="Pt3-fv-PZV" secondAttribute="height" id="3F9-uV-oK7"/>
+                            <constraint firstItem="UVg-xg-uAR" firstAttribute="height" secondItem="Pt3-fv-PZV" secondAttribute="height" id="B87-dV-DAr"/>
+                            <constraint firstItem="Pt3-fv-PZV" firstAttribute="top" secondItem="L24-yg-QLv" secondAttribute="bottom" id="FaS-vc-gIe"/>
+                            <constraint firstItem="m3c-Mb-Zdb" firstAttribute="width" secondItem="Pt3-fv-PZV" secondAttribute="width" id="NJu-d5-GaW"/>
+                            <constraint firstItem="m3c-Mb-Zdb" firstAttribute="top" secondItem="L24-yg-QLv" secondAttribute="bottom" id="P8b-hd-or5"/>
+                            <constraint firstAttribute="trailing" secondItem="m3c-Mb-Zdb" secondAttribute="trailing" id="QSL-wc-81y"/>
+                            <constraint firstItem="tiv-i5-qhr" firstAttribute="width" secondItem="Pt3-fv-PZV" secondAttribute="width" id="UDO-bm-0u4"/>
+                            <constraint firstItem="mYw-KF-JQX" firstAttribute="top" secondItem="tiv-i5-qhr" secondAttribute="bottom" id="bHq-cQ-SAN"/>
+                            <constraint firstItem="m3c-Mb-Zdb" firstAttribute="height" secondItem="Pt3-fv-PZV" secondAttribute="height" id="cJy-KJ-OLR"/>
+                            <constraint firstItem="mYw-KF-JQX" firstAttribute="top" secondItem="UVg-xg-uAR" secondAttribute="bottom" id="fvM-Ri-Lgi"/>
+                            <constraint firstItem="tiv-i5-qhr" firstAttribute="top" secondItem="Pt3-fv-PZV" secondAttribute="bottom" id="gTE-nt-qzu"/>
+                            <constraint firstItem="UVg-xg-uAR" firstAttribute="leading" secondItem="tiv-i5-qhr" secondAttribute="trailing" id="ghQ-fZ-bZo"/>
+                            <constraint firstItem="m3c-Mb-Zdb" firstAttribute="leading" secondItem="Pt3-fv-PZV" secondAttribute="trailing" id="oqV-al-VRh"/>
+                            <constraint firstItem="UVg-xg-uAR" firstAttribute="width" secondItem="Pt3-fv-PZV" secondAttribute="width" id="qHD-E2-RGM"/>
+                            <constraint firstItem="Pt3-fv-PZV" firstAttribute="leading" secondItem="eyh-qC-dzg" secondAttribute="leading" id="wK7-KC-vAw"/>
+                            <constraint firstItem="tiv-i5-qhr" firstAttribute="leading" secondItem="eyh-qC-dzg" secondAttribute="leading" id="x79-QV-4g3"/>
+                            <constraint firstItem="UVg-xg-uAR" firstAttribute="top" secondItem="m3c-Mb-Zdb" secondAttribute="bottom" id="zSu-OI-3NT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outletCollection property="colorButton" destination="Pt3-fv-PZV" collectionClass="NSMutableArray" id="fuL-yp-GtX"/>
+                        <outletCollection property="colorButton" destination="m3c-Mb-Zdb" collectionClass="NSMutableArray" id="5ZO-fa-2Nw"/>
+                        <outletCollection property="colorButton" destination="tiv-i5-qhr" collectionClass="NSMutableArray" id="3D5-Py-L3n"/>
+                        <outletCollection property="colorButton" destination="UVg-xg-uAR" collectionClass="NSMutableArray" id="7vR-lZ-xFe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XE1-IX-7Zo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038" y="419"/>
+        </scene>
+        <!--Color View Controller-->
+        <scene sceneID="6hF-K6-zH7">
+            <objects>
+                <viewController storyboardIdentifier="ColorViewController" id="4et-Xq-SO2" customClass="ColorViewController" customModule="SimonSays" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eji-v8-YD7"/>
+                        <viewControllerLayoutGuide type="bottom" id="ddL-HE-TFZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NO8-dq-Amy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lh3-XZ-qD4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1697" y="419"/>
+        </scene>
+    </scenes>
+</document>
