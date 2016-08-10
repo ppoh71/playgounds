@@ -9,6 +9,11 @@ var str = "Hello, playground"
  draw a line or a circle on an image canvas
  */
 
+let num = 127.23454667
+
+round(num)
+
+
 
 /* different printing function types */
 enum FuncTypes: String {
@@ -21,7 +26,6 @@ enum FuncTypes: String {
 
 
 final class ImageUtils{
-    
     
     class func drawLineOnImage(funcType: FuncTypes) -> UIImage{
         
@@ -44,19 +48,17 @@ final class ImageUtils{
         //context stuff
         CGContextSetLineWidth(context, 1)
         
-        
-        
         //switch some func cases for image height
         switch funcType {
             
-        case .Line:
+        case .Circle:
             print("Recording")
             CGContextAddArc(context, 2.5, CGFloat(drawHeight/2), 2.5, 0, CGFloat(M_PI * 2), 0)
             CGContextSetFillColorWithColor(context,LineColor.CGColor)
             CGContextSetStrokeColorWithColor(context,LineColor.CGColor)
             CGContextDrawPath(context, .FillStroke)
             
-        case .Circle:
+        case .Line:
             print("image printingmarker")
             CGContextMoveToPoint(context,0, 0)
             heightPercent = LineHeight*55/100
