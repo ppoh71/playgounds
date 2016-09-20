@@ -12,3 +12,17 @@ for (index, element) in list.enumerate() {
 }
 
 print(arrayOfTuples)
+
+
+
+func isNumberEven(num: Int) -> Bool {
+    
+    if num%2 == 0 {
+        return true
+    } else {
+        return false
+    }
+}
+
+
+isNumberEven(6)
