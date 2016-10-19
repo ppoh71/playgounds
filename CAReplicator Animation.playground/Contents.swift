@@ -3,8 +3,8 @@
 import UIKit
 import XCPlayground
 
-let container = UIView(frame: CGRectMake(0,0,200,200))
-container.backgroundColor = UIColor.whiteColor()
+let container = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+container.backgroundColor = UIColor.white
 
 
 XCPlaygroundPage.currentPage.liveView = container
@@ -20,7 +20,7 @@ func animation1() {
     let r = CAReplicatorLayer()
     r.bounds = CGRect(x: 0.0, y: 0.0, width: 60.0, height: 200.0)
     r.position = container.center
-    r.backgroundColor = UIColor.lightGrayColor().CGColor
+    r.backgroundColor = UIColor.lightGray.cgColor
     container.layer.addSublayer(r)
     
     
@@ -28,7 +28,7 @@ func animation1() {
     bar.bounds = CGRect(x: 0.0, y: 0.0, width: 8.0, height: 50.0)
     bar.position = CGPoint(x: 10.0, y: 100.0)
     bar.cornerRadius = 2.0
-    bar.backgroundColor = UIColor.redColor().CGColor
+    bar.backgroundColor = UIColor.red.cgColor
     
     r.addSublayer(bar)
     

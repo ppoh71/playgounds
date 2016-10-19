@@ -3,9 +3,8 @@
 import UIKit
 import XCPlayground
 
-let container = UIView(frame: CGRectMake(0,0,200,200))
-container.backgroundColor = UIColor.whiteColor()
-
+let container = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+container.backgroundColor = UIColor.white
 
 XCPlaygroundPage.currentPage.liveView = container
 
@@ -26,34 +25,55 @@ func animation1() {
     
     let circlePath = UIBezierPath(arcCenter: CGPoint(x: 60,y: 60), radius: CGFloat(5), startAngle: CGFloat(0), endAngle:CGFloat(M_PI * 2), clockwise: true)
     
-    let shapeLayer = CAShapeLayer()
-    shapeLayer.path = circlePath.CGPath
+    let circlePathOuter = UIBezierPath(arcCenter: CGPoint(x: 60,y: 60), radius: CGFloat(10), startAngle: CGFloat(0), endAngle:CGFloat(M_PI * 2), clockwise: true)
     
-    shapeLayer.fillColor = UIColor.blueColor().CGColor
-    shapeLayer.strokeColor = UIColor.redColor().CGColor
+    
+    let shapeLayerOuter = CAShapeLayer()
+    shapeLayerOuter.path = circlePathOuter.cgPath
+    shapeLayerOuter.strokeColor = UIColor.green.cgColor
+    shapeLayerOuter.fillColor = UIColor.clear.cgColor
+    shapeLayerOuter.lineWidth = 0.5
+    shapeLayerOuter.opacity = 1
+    
+
+    
+    let shapeLayer = CAShapeLayer()
+    shapeLayer.path = circlePath.cgPath
+    shapeLayer.fillColor = UIColor.blue.cgColor
+    shapeLayer.strokeColor = UIColor.red.cgColor
     shapeLayer.lineWidth = 1.0
+    shapeLayer.opacity = 0.7
     
     container.layer.addSublayer(shapeLayer)
-    shapeLayer.lineWidth = 20
+    container.layer.addSublayer(shapeLayerOuter)
     
-
-
     
-    let animation = CABasicAnimation(keyPath: "lineWidth")
+    let animationOuter = CABasicAnimation(keyPath: "opacity")
+    animationOuter.fromValue = 0.2
+    animationOuter.toValue = 0.8
+    animationOuter.duration = 0.7
+    animationOuter.autoreverses = true
+    animationOuter.repeatCount = 200000
     
-    // Set the starting value
-    animation.fromValue = 0
-    
-    // Set the completion value
-    animation.toValue = 10
+    let animation = CABasicAnimation(keyPath: "opacity")
+    animation.fromValue = 0.7
+    animation.toValue = 0.3
     animation.duration = 0.7
     animation.autoreverses = true
-    
-    // How may times should the animation repeat?
     animation.repeatCount = 200000
     
+    let animationLineWidth = CABasicAnimation(keyPath: "lineWidth")
+    animationLineWidth.fromValue = 0
+    animationLineWidth.toValue = 10
+    animationLineWidth.duration = 0.7
+    animationLineWidth.autoreverses = true
+    animationLineWidth.repeatCount = 200000
     // Finally, add the animation to the layer
-    shapeLayer.addAnimation(animation, forKey: "cornerRadius")
+    
+    
+    shapeLayer.add(animation, forKey: "lineWidth")
+    shapeLayer.add(animationLineWidth, forKey: "opacity")
+    shapeLayer.add(animationOuter, forKey: "opacityOuter")
 
     
     /*
